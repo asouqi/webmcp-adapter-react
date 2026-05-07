@@ -1,0 +1,24 @@
+{
+  "name": "webmcp-adapter-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "webmcp-adapter": "0.0.3"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.8",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "keywords": [],
+  "license": "MIT"
+}
