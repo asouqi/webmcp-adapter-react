@@ -1,6 +1,6 @@
 {
   "name": "webmcp-adapter-react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React hooks for WebMCP tool registration. Provides a simple useTools hook to register AI-powered tools within React component lifecycle.",
   "type": "module",
   "main": "./dist/index.js",
