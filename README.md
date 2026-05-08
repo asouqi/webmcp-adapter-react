@@ -10,14 +10,20 @@ npm install webmcp-adapter-react webmcp-adapter
 
 ## API
 
-### `useTools(tools, deps?)`
+### `useTools(options)`
 
 Registers tools with WebMCP and automatically unregisters them on unmount or when dependencies change.
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `tools` | `ToolDefinition[]` | Array of tool definitions to register |
-| `deps` | `unknown[]` | Optional dependency array (like `useEffect` deps) |
+```typescript
+interface UseToolsOptions {
+    /** Tools to register */
+    tools: ToolDefinition[]
+    /** Dependencies that should trigger re-registration */
+    deps?: unknown[]
+}
+
+function useTools(options: UseToolsOptions): void
+```
 
 ## How It Works
 
