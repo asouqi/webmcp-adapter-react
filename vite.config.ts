@@ -1,20 +1,24 @@
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
-import { resolve } from 'path'
 
 export default defineConfig({
+    plugins: [dts()],
     build: {
         lib: {
-            entry: resolve(__dirname, 'src/index.ts'),
+            entry: 'src/index.ts',
             name: 'WebMCP React Adapter',
             formats: ['es', 'cjs'],
-            fileName: (format) => `index.${format === 'es' ? 'mjs' : 'js'}`,
+            fileName: (format) => `index.${format === 'es' ? 'mjs' : 'js'}`
         },
         rollupOptions: {
-            external: ['@mcp-b/global', '@mcp-b/webmcp-types'],
-        },
-    },
-    plugins: [
-        dts({ rollupTypes: true }),
-    ],
+            external: ['react', 'react-dom', 'webmcp-adapter'],  // ← Add this!
+            output: {
+                globals: {
+                    react: 'React',
+                    'react-dom': 'ReactDOM',
+                    'webmcp-adapter': 'webmcpAdapter'
+                }
+            }
+        }
+    }
 })

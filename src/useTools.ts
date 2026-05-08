@@ -19,7 +19,9 @@ export function useTools(options: UseToolsOptions) {
     toolsRef.current = tools
 
     useEffect(() => {
-        const unregisterAll = registerBatch(toolsRef.current)
-        return () => unregisterAll()
+        if (toolsRef.current) {
+            const unregisterAll = registerBatch(toolsRef.current)
+            return () => unregisterAll()
+        }
     }, [deps])
 }

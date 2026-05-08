@@ -24,6 +24,11 @@
   "peerDependencies": {
     "react": ">=18.0.0"
   },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": false
+    }
+  },
   "devDependencies": {
     "@types/react": "^19.2.14",
     "typescript": "^5.9.3",
