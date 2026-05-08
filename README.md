@@ -70,7 +70,7 @@ function App() {
 ```tsx
 import { useState } from 'react'
 import { useTools } from 'webmcp-adapter-react'
-import { formTools } from 'webmcp-forms'
+import { createFormTools } from 'webmcp-forms'
 
 const fields = {
     name: { type: 'string', required: true },
@@ -80,15 +80,18 @@ const fields = {
 function ContactForm() {
     const [values, setValues] = useState({ name: '', email: '' })
 
-    const tools = formTools({
-        formId: 'contact',
-        fields,
-        getValues: () => values,
-        setFieldValue: (field, value) => setValues(prev => ({ ...prev, [field]: value })),
-        submit: () => console.log('Submitted:', values)
+    useTools({
+        tools: createFormTools({
+            formId: 'test',
+            fields,
+            values,
+            onChange: (field, value) => {
+                setValues((prev) => ({ ...prev, [field]: value }));
+            },
+            selectedTools: new Set<FormTools>(['fill-field', 'clear-field']),
+        }),
+        deps: [fields]
     })
-
-    useTools(tools, [fields])
 
     return (
         <form>

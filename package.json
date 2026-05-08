@@ -38,8 +38,7 @@
     "ai",
     "tools",
     "model-context-protocol",
-    "browser",
-    "copilot"
+    "browser"
   ],
   "repository": {
     "type": "git",
