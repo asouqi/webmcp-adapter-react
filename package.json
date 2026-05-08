@@ -1,7 +1,7 @@
 {
   "name": "webmcp-adapter-react",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "React hooks for WebMCP tool registration. Provides a simple useTools hook to register AI-powered tools within React component lifecycle.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -19,7 +19,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "webmcp-adapter": "0.0.3"
+    "webmcp-adapter": "0.0.4"
   },
   "peerDependencies": {
     "react": ">=18.0.0"
@@ -30,6 +30,20 @@
     "vite": "^8.0.8",
     "vite-plugin-dts": "^4.5.4"
   },
-  "keywords": [],
+  "keywords": [
+    "webmcp",
+    "mcp",
+    "react",
+    "hooks",
+    "ai",
+    "tools",
+    "model-context-protocol",
+    "browser",
+    "copilot"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asouqi/webmcp-adapter-react.git"
+  },
   "license": "MIT"
 }
