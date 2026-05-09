@@ -11,7 +11,7 @@ export default defineConfig({
             fileName: (format) => `index.${format === 'es' ? 'mjs' : 'js'}`
         },
         rollupOptions: {
-            external: ['react', 'react-dom', 'webmcp-adapter'],  // ← Add this!
+            external: ['react', 'react-dom', 'webmcp-adapter'],
             output: {
                 globals: {
                     react: 'React',
